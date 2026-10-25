@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thetips4you.in/sitemap.xml

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "GRUjApPqCoE",
+    "slug": "claude-code-openrouter",
+    "title": "Claude Code for FREE Forever — OpenRouter Setup (2026)",
+    "shortTitle": "Claude Code with OpenRouter",
+    "category": "AI CODING · SETUP",
+    "summary": "A practical walkthrough of connecting Claude Code to OpenRouter and trying free-tier model options for coding tasks.",
+    "published": "2026-03-09",
+    "watch": true,
+    "points": [
+      "See where OpenRouter fits in a Claude Code workflow.",
+      "Follow the setup path and choose an available model.",
+      "Check current provider limits before relying on a free tier."
+    ]
+  },
+  {
+    "id": "20vcJmqAr4M",
+    "slug": "opencode-free-agent",
+    "title": "OpenCode: Free AI Coding Agent Setup Guide 2026",
+    "shortTitle": "Set up OpenCode",
+    "category": "OPEN SOURCE · AGENTS",
+    "summary": "Get started with OpenCode, an open-source AI coding agent, and explore no-subscription model options.",
+    "published": "2026-03-24",
+    "watch": true,
+    "points": [
+      "Install and configure the OpenCode coding agent.",
+      "Connect a supported model provider.",
+      "Run a first practical AI-assisted coding task."
+    ]
+  },
+  {
+    "id": "xSjF0ownP70",
+    "slug": "codex-claude-cursor",
+    "title": "Codex vs Claude Code vs Cursor: Cost & Models",
+    "shortTitle": "Choose an AI coding tool",
+    "category": "AI CODING · COMPARISON",
+    "summary": "A beginner-friendly comparison of AI coding workflows, model choices, and cost considerations.",
+    "published": "2026-10-19",
+    "watch": true,
+    "points": [
+      "Compare how the tools fit different coding workflows.",
+      "Look beyond headline prices to model and usage choices.",
+      "Pick a starting tool that matches your project and budget."
+    ]
+  },
+  {
+    "id": "OyT-1qhUs7s",
+    "slug": "skills-tools-mcp",
+    "title": "AI Skills vs Tools vs MCP: What’s the Difference in 5 mins?",
+    "shortTitle": "Skills, tools and MCP",
+    "category": "AGENT FOUNDATIONS",
+    "summary": "Understand how reusable instructions, tool actions, and MCP connections fit together in an AI agent stack.",
+    "published": "2026-10-13",
+    "watch": true,
+    "points": [
+      "Separate an agent skill from an executable tool.",
+      "Understand what MCP connects in a workflow.",
+      "Use the distinctions when designing or evaluating agents."
+    ]
+  },
+  {
+    "id": "EnYOVfQwIxI",
+    "slug": "",
+    "title": "AI Code Review Agents: Should Developers Be Worried?",
+    "shortTitle": "AI code review agents",
+    "category": "AI AGENTS · CODE REVIEW",
+    "summary": "Explore where AI review agents help, and why developer judgment remains part of the review process.",
+    "watch": false
+  },
+  {
+    "id": "GHsNpafKNWE",
+    "slug": "",
+    "title": "What Is an AI Coding Harness?",
+    "shortTitle": "AI coding harnesses",
+    "category": "AGENT FOUNDATIONS",
+    "summary": "A short introduction to the structure around an AI coding agent and how it works with a project.",
+    "watch": false
+  },
+  {
+    "id": "ABI9HCL67RY",
+    "slug": "",
+    "title": "CLAUDE.md vs AGENTS.md Explained",
+    "shortTitle": "Agent instruction files",
+    "category": "AI AGENTS · WORKFLOWS",
+    "summary": "Learn how project instruction files guide coding agents inside a repository.",
+    "watch": false
+  },
+  {
+    "id": "SOoy4nhY5PA",
+    "slug": "",
+    "title": "Subagents vs Agent Teams Explained in 5 Minutes",
+    "shortTitle": "Subagents and teams",
+    "category": "AI AGENTS · TEAMS",
+    "summary": "A concise introduction to ways multiple agents can split or coordinate work.",
+    "watch": false
+  }
+]

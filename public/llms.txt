@@ -1,0 +1,16 @@
+# Thetips4you
+
+Practical DevOps, cloud, and AI coding tutorials.
+
+## Main pages
+- Home: https://thetips4you.in/
+- AI coding guides: https://thetips4you.in/ai-coding/
+
+## AI coding watch pages
+- Claude Code for FREE Forever — OpenRouter Setup (2026): https://thetips4you.in/ai-coding/claude-code-openrouter/
+- OpenCode: Free AI Coding Agent Setup Guide 2026: https://thetips4you.in/ai-coding/opencode-free-agent/
+- Codex vs Claude Code vs Cursor: Cost & Models: https://thetips4you.in/ai-coding/codex-claude-cursor/
+- AI Skills vs Tools vs MCP: What’s the Difference in 5 mins?: https://thetips4you.in/ai-coding/skills-tools-mcp/
+
+## Official channel
+- https://www.youtube.com/@Thetips4you

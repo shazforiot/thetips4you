@@ -1,36 +1,37 @@
-# Thetips4you — GitHub Pages
+# Thetips4you
 
-Public destination after deployment: https://shazforiot.github.io/thetips4you/
+The public site is hosted with GitHub Pages at <https://thetips4you.in/>.
 
-This static React website preserves the 3D animation, responsive layout and working tutorial links. It does not depend on the private Sites host.
+This repository combines a React homepage with static, crawler-readable AI coding pages. The homepage highlights Claude Code, OpenCode, and Codex tutorials. The AI coding guide lives at /ai-coding/, with dedicated watch pages for four videos.
 
-## Publish
+## Local development
 
-1. Create a public repository named thetips4you under shazforiot. Do not initialize it with a README.
-2. Upload this folder's source files, including .github/workflows/deploy.yml, to its main branch. Do not upload node_modules.
-3. In the repository, choose Settings → Pages → Build and deployment → Source → GitHub Actions.
-4. In Actions, select "Deploy website to GitHub Pages" and choose Run workflow if the first run happened before Pages was enabled.
-5. Wait for a successful deployment, then visit the public destination above.
-
-For command-line upload, run these inside this extracted source folder after signing into GitHub CLI:
-
-    git init -b main
-    git add .
-    git commit -m "Publish Thetips4you website"
-    gh repo create shazforiot/thetips4you --public --source=. --remote=origin --push
-
-If the repository already exists, use its existing Git history; do not force-push or overwrite it.
-
-## Develop
-
-Node.js 22.13 or newer is required.
+Use Node.js 22.13 or newer.
 
     npm ci
     npm run dev
 
-## Build
+Build the GitHub Pages artifact with:
 
     npm run build
-    npm run preview
 
-The dist/ folder contains the static website. The /thetips4you/ base path is configured in vite.config.ts for this repository. Update that setting if moving to a root domain or a different repository name.
+The output is in dist/. GitHub Actions deploys it when changes are pushed to main.
+
+## AI coding content
+
+Edit data/ai-videos.json to change the curated video list. The first two videos are featured on the guide page; the first three watch pages are featured on the homepage.
+
+Regenerate the static guide, watch pages, sitemap, robots file, and llms.txt after changing the data:
+
+    python scripts/generate_ai_pages.py
+
+Four watch pages include embedded YouTube players and video structured data. Keep titles, upload dates, descriptions, and links aligned with the actual videos. scripts/generate_og.py creates the social sharing image if it needs to be refreshed.
+
+## Discoverability
+
+- /sitemap.xml lists the homepage, guide, and watch pages.
+- /robots.txt points crawlers to the sitemap.
+- /llms.txt is a supplementary plain-text guide for agents that choose to use it.
+- Static HTML links and page descriptions remain visible without JavaScript.
+
+These files help crawlers find the content, but search engines decide when and whether to index it. After deployment, verify the domain in Google Search Console and submit https://thetips4you.in/sitemap.xml.

@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, ArrowRight, Play, Terminal, GitBranch, Box, Cloud, Pause, RotateCw } from "lucide-react";
+import aiVideos from "../data/ai-videos.json";
 
 const channel = "https://www.youtube.com/@Thetips4you";
+const featuredAiVideos = aiVideos.filter(video => video.watch).slice(0, 3);
 const videos = [
   { id: "ZyWBs0CU2wk", tag: "CONTAINERS", title: "Docker in 10 minutes", description: "Your first step into containers. Understand the essentials, then start building.", number: "01" },
   { id: "IluVqhoCChw", tag: "ORCHESTRATION", title: "Kubernetes: zero to deployed", description: "Connect the pieces and take an application into a Kubernetes cluster.", number: "02" },
@@ -75,17 +77,18 @@ export default function Home() {
       <a className="skip" href="#main">Skip to content</a>
       <header className="header">
         <a className="brand" href="#" aria-label="Thetips4you home"><span className="brand-mark"><Terminal size={22}/></span>thetips<span className="brand-four">4</span>you<span className="brand-dot">.</span></a>
-        <nav aria-label="Main navigation"><a href="#tutorials">Tutorials</a><a href="#roadmap">Learning path</a><a href="#about">About</a></nav>
+        <nav aria-label="Main navigation"><a href="#ai-coding">AI coding agents</a><a href="#tutorials">DevOps tutorials</a><a href="#roadmap">Learning path</a><a href="#about">About</a></nav>
         <a className="youtube-link" href={channel} target="_blank" rel="noreferrer"><Play size={18}/><span>Visit channel</span><ArrowUpRight size={15}/></a>
       </header>
+      <div className="ai-ribbon"><span className="ribbon-new">NEW / AI CODING</span><span>Claude Code, OpenCode, Codex and agent workflows</span><a href="/ai-coding/">Explore the field guide <ArrowUpRight size={15}/></a></div>
 
       <main id="main">
         <section className="hero">
           <div className="hero-copy">
             <div className="eyebrow"><span className="status-dot"/> YOUR NEXT SKILL STARTS HERE</div>
             <h1>Less theory.<br/>More <span className="outline-word">building.</span></h1>
-            <p className="hero-description">Make sense of DevOps, cloud, and AI.<br/>Practical tutorials. Real workflows.<br/>One breakthrough at a time.</p>
-            <div className="hero-actions"><a className="button primary" href="#tutorials"><Play size={17} fill="currentColor"/>Explore tutorials<ArrowRight size={18}/></a><a className="text-link" href="#roadmap">Find your starting point <ArrowUpRight size={17}/></a></div>
+            <p className="hero-description">Make sense of DevOps, cloud, and AI coding agents.<br/>Practical tutorials. Real workflows.<br/>One breakthrough at a time.</p>
+            <div className="hero-actions"><a className="button primary" href="#ai-coding"><Play size={17} fill="currentColor"/>Explore AI coding<ArrowRight size={18}/></a><a className="text-link" href="#tutorials">DevOps tutorials <ArrowUpRight size={17}/></a></div>
             <div className="hero-note"><span className="note-line"/><span>CODE. COMMIT. COLLABORATE.</span></div>
           </div>
           <div className="hero-visual">
@@ -99,13 +102,22 @@ export default function Home() {
         </section>
         <div className="tool-strip" aria-label="Topics covered"><span>YOUR TOOLKIT,<br/><b>EXPANDED.</b></span><div>Linux</div><div><Box/>Docker</div><div>Kubernetes</div><div><GitBranch/>Jenkins</div><div>Terraform</div><div><Cloud/>Cloud & AI</div></div>
 
+        <section className="ai-section section" id="ai-coding" aria-labelledby="ai-heading">
+          <div className="ai-intro">
+            <div><p className="eyebrow muted">01 / THE AI CODING FIELD GUIDE</p><h2 id="ai-heading">Put an AI coding agent <span>on your team.</span></h2></div>
+            <div><p>Start with a real setup, compare your options, then learn how agent skills and tools fit together. These are practical Thetips4you videos for developers who want to build with AI.</p><a className="text-link" href="/ai-coding/">Browse the complete AI coding guide <ArrowUpRight size={18}/></a></div>
+          </div>
+          <div className="ai-feature-grid">{featuredAiVideos.map((video,index)=><a key={video.id} className="ai-feature-card" href={"/ai-coding/"+video.slug+"/"} aria-label={video.title+" — watch guide"}><div className="ai-feature-thumb"><img src={"https://i.ytimg.com/vi/"+video.id+"/hqdefault.jpg"} alt="" loading="lazy"/><span className="ai-play"><Play size={18} fill="currentColor"/></span><span className="ai-number">0{index+1}</span></div><div className="ai-feature-body"><span className="ai-tag">{video.category}</span><h3>{video.title}</h3><p>{video.summary}</p><span className="ai-card-link">Watch the guide <ArrowUpRight size={17}/></span></div></a>)}</div>
+          <div className="ai-bottom"><span>Claude Code · OpenCode · Codex · agent skills · MCP</span><a href="/ai-coding/">All AI coding videos <ArrowUpRight size={17}/></a></div>
+        </section>
+
         <section className="tutorials section" id="tutorials">
-          <div className="section-top"><div><p className="eyebrow muted">01 / WATCH. TRY. UNDERSTAND.</p><h2>Build your next skill.</h2></div><a className="text-link" href={channel+"/videos"} target="_blank" rel="noreferrer">All videos <ArrowUpRight size={18}/></a></div>
+          <div className="section-top"><div><p className="eyebrow muted">02 / WATCH. TRY. UNDERSTAND.</p><h2>Build your next skill.</h2></div><a className="text-link" href={channel+"/videos"} target="_blank" rel="noreferrer">All videos <ArrowUpRight size={18}/></a></div>
           <div className="video-grid">{videos.map(video=><a key={video.id} className="video-card" href={"https://www.youtube.com/watch?v="+video.id} target="_blank" rel="noreferrer"><div className="thumbnail"><img src={"https://i.ytimg.com/vi/"+video.id+"/hqdefault.jpg"} alt="" loading="lazy"/><span className="play-badge"><Play size={21} fill="currentColor"/></span><span className="video-index">{video.number}</span></div><div className="video-meta">{video.tag}<ArrowUpRight size={17}/></div><h3>{video.title}</h3><p>{video.description}</p></a>)}</div>
         </section>
 
         <section className="roadmap section" id="roadmap">
-          <div className="roadmap-intro"><p className="eyebrow muted">02 / CONNECT THE DOTS</p><h2>A direction.<br/>Not another<br/><span>rabbit hole.</span></h2><p>Start with the foundations. Connect the tools. Build a workflow you understand from end to end.</p><a className="button secondary" href="https://www.thetips4you.com/devops-roadmap-2026-8-skills-to-master-with-free-videos/" target="_blank" rel="noreferrer">Explore the DevOps roadmap <ArrowUpRight size={18}/></a></div>
+          <div className="roadmap-intro"><p className="eyebrow muted">03 / CONNECT THE DOTS</p><h2>A direction.<br/>Not another<br/><span>rabbit hole.</span></h2><p>Start with the foundations. Connect the tools. Build a workflow you understand from end to end.</p><a className="button secondary" href="https://www.thetips4you.com/devops-roadmap-2026-8-skills-to-master-with-free-videos/" target="_blank" rel="noreferrer">Explore the DevOps roadmap <ArrowUpRight size={18}/></a></div>
           <div className="path-list">{[
             ["01","Find your footing","Linux · Git · Scripting",Terminal,"xEckAK9pYyY","Linux full course"],
             ["02","Package & automate","Docker · Jenkins · CI/CD",Box,"ZyWBs0CU2wk","Docker beginner tutorial"],
@@ -114,9 +126,9 @@ export default function Home() {
           ].map(([n,title,sub,Icon,videoId,videoTitle])=>{const I=Icon as typeof Terminal;return <a className="path-step" key={String(n)} href={"https://www.youtube.com/watch?v="+videoId} target="_blank" rel="noreferrer" aria-label={String(title)+": watch "+String(videoTitle)+" on YouTube (opens in a new tab)"}><span className="step-num">{String(n)}</span><I size={22}/><div><h3>{String(title)}</h3><p>{String(sub)}</p></div><ArrowUpRight className="step-arrow" size={20} aria-hidden="true"/></a>})}</div>
         </section>
 
-        <section className="about section" id="about"><div className="eyebrow muted">03 / THE IDEA BEHIND THETIPS4YOU</div><div className="about-content"><h2>Technology moves fast.<br/>Let’s figure it out <em>together.</em></h2><div><p>Thetips4you is a place to turn technical curiosity into practical skills. From your first container to a complete delivery pipeline, there’s always something new to build.</p><a className="text-link" href={channel+"?sub_confirmation=1"} target="_blank" rel="noreferrer">Join us on YouTube <ArrowUpRight size={18}/></a></div></div></section>
+        <section className="about section" id="about"><div className="eyebrow muted">04 / THE IDEA BEHIND THETIPS4YOU</div><div className="about-content"><h2>Technology moves fast.<br/>Let’s figure it out <em>together.</em></h2><div><p>Thetips4you is a place to turn technical curiosity into practical skills. From your first container to a complete delivery pipeline, there’s always something new to build.</p><a className="text-link" href={channel+"?sub_confirmation=1"} target="_blank" rel="noreferrer">Join us on YouTube <ArrowUpRight size={18}/></a></div></div></section>
       </main>
-      <footer><a className="brand" href="#">thetips<span className="brand-four">4</span>you.</a><span>Code. Commit. Collaborate.</span><div><a href="https://www.thetips4you.com/" target="_blank" rel="noreferrer">Read the blog <ArrowUpRight size={14}/></a><a href={channel} target="_blank" rel="noreferrer">YouTube <ArrowUpRight size={14}/></a></div></footer>
+      <footer><a className="brand" href="#">thetips<span className="brand-four">4</span>you.</a><span>Code. Commit. Collaborate.</span><div><a href="/ai-coding/">AI coding <ArrowUpRight size={14}/></a><a href="https://www.thetips4you.com/" target="_blank" rel="noreferrer">Read the blog <ArrowUpRight size={14}/></a><a href={channel} target="_blank" rel="noreferrer">YouTube <ArrowUpRight size={14}/></a></div></footer>
     </div>
   );
 }
