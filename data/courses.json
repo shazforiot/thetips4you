@@ -1,0 +1,204 @@
+{
+  "courses": [
+    {
+      "id": "xEckAK9pYyY",
+      "slug": "linux-full-course",
+      "title": "Linux Full Course for Beginners 2026",
+      "youtubeTitle": "Linux Full Course for Beginners 2026 - Complete Beginner Guide 2026",
+      "category": "FOUNDATIONS",
+      "format": "FULL COURSE",
+      "duration": "1h 26m",
+      "published": "2026-04-13",
+      "summary": "Build a Linux foundation with the terminal, file system and commands you will use throughout DevOps and cloud work.",
+      "points": [
+        "Navigate the Linux file system.",
+        "Practice essential terminal commands.",
+        "Build the foundation for containers and CI/CD."
+      ]
+    },
+    {
+      "id": "XLJuoOBm7Go",
+      "slug": "git-beginner-course",
+      "title": "Git Tutorial for Beginners: Learn Git in 1 Hour (2026)",
+      "youtubeTitle": "Git Tutorial for Beginners: Learn Git in 1 Hour (2026)",
+      "category": "FOUNDATIONS",
+      "format": "ONE-HOUR COURSE",
+      "duration": "59m",
+      "published": "2026-02-16",
+      "summary": "A complete beginner path through Git basics so you can track changes, work with branches and collaborate with confidence.",
+      "points": [
+        "Understand repositories and commits.",
+        "Practice the everyday Git workflow.",
+        "Learn how branches support collaboration."
+      ]
+    },
+    {
+      "id": "iARL7iFyasE",
+      "slug": "docker-full-course",
+      "title": "Docker Tutorial for Beginners — Full Course",
+      "youtubeTitle": "Docker Tutorial for Beginners [ FULL COURSE in 3 Hours ]",
+      "category": "CONTAINERS",
+      "format": "FULL COURSE",
+      "duration": "2h 39m",
+      "published": "2022-05-23",
+      "summary": "Start with Docker fundamentals and work through a complete beginner course on images, containers and day-to-day container workflows.",
+      "points": [
+        "Understand what containers and images are for.",
+        "Follow the Docker setup and basic command workflow.",
+        "Build confidence using Docker in practical projects."
+      ]
+    },
+    {
+      "id": "IluVqhoCChw",
+      "slug": "kubernetes-crash-course",
+      "title": "Kubernetes Tutorial — From Zero to Deployed",
+      "youtubeTitle": "Kubernetes Tutorial: From Zero to Deployed (100% FREE) | Beginner Guide 2025",
+      "category": "CLOUD NATIVE",
+      "format": "HANDS-ON GUIDE",
+      "duration": "36m",
+      "published": "2026-02-17",
+      "summary": "Start with Kubernetes basics and follow a practical path from your first cluster to a deployed application.",
+      "points": [
+        "Understand the core pieces of a Kubernetes cluster.",
+        "Follow the setup and deployment workflow.",
+        "See how to take an application from zero to deployed."
+      ]
+    },
+    {
+      "id": "0PbxpIao_EU",
+      "slug": "github-actions-cicd",
+      "title": "GitHub Actions Tutorial — CI/CD from Scratch",
+      "youtubeTitle": "GitHub Actions Tutorial for Beginners – CI/CD Pipeline from Scratch (2026)",
+      "category": "CI/CD",
+      "format": "PRACTICAL COURSE",
+      "duration": "20m",
+      "published": "2026-02-24",
+      "summary": "Build a GitHub Actions CI/CD pipeline that automatically builds, tests and deploys when code changes.",
+      "points": [
+        "Understand workflows and triggers.",
+        "Build and test code automatically on a push.",
+        "Follow a practical deployment pipeline."
+      ]
+    },
+    {
+      "id": "MTm3cb7qiEo",
+      "slug": "jenkins-full-course",
+      "title": "Jenkins Tutorial for Beginners — Full Course",
+      "youtubeTitle": "Jenkins Tutorial for Beginners [FULL COURSE in 3 Hours]",
+      "category": "CI/CD",
+      "format": "FULL COURSE",
+      "duration": "2h 32m",
+      "published": "2022-01-12",
+      "summary": "Learn the Jenkins basics, set up your first jobs and explore the automation behind a working CI/CD pipeline.",
+      "points": [
+        "Get oriented with Jenkins and its interface.",
+        "Set up a first job and understand build automation.",
+        "Connect the pieces into a practical CI/CD workflow."
+      ]
+    },
+    {
+      "id": "Typ9U6k6g5s",
+      "slug": "gitlab-cicd-zero-to-hero",
+      "title": "GitLab CI/CD Full Course — Zero to Hero",
+      "youtubeTitle": "GitLab CI/CD Full Course — Zero to Hero in 3 Hours",
+      "category": "CI/CD",
+      "format": "ZERO TO HERO",
+      "duration": "2h 55m",
+      "published": "2022-08-15",
+      "summary": "A long-form GitLab CI/CD walkthrough that takes you from pipeline basics toward building and running automated delivery workflows.",
+      "points": [
+        "Understand CI/CD concepts in GitLab.",
+        "Follow pipeline and runner setup.",
+        "See how automation supports a delivery workflow."
+      ]
+    },
+    {
+      "id": "uvK4c3FOW5w",
+      "slug": "aws-beginner-course",
+      "title": "AWS Tutorial for Beginners 2026 — EC2, S3, Lambda & More",
+      "youtubeTitle": "AWS Tutorial for Beginners 2026: EC2, S3, Lambda & More",
+      "category": "CLOUD",
+      "format": "VIDEO + SERIES",
+      "duration": "38m + 6 lessons",
+      "published": "2026-06-29",
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLVx1qovxj-alKSJnmc0GgVKm7Nn-WXM0y",
+      "summary": "Start with EC2, S3 and Lambda in the 2026 beginner video, then continue through the channel's six-lesson AWS course.",
+      "points": [
+        "Get oriented with core AWS services.",
+        "Explore EC2, S3 and Lambda in one beginner tutorial.",
+        "Continue into the six-lesson AWS course series."
+      ]
+    },
+    {
+      "id": "tgVdbF4nmyI",
+      "slug": "ansible-course-series",
+      "title": "Ansible Tutorial for Beginners — 14-Lesson Series",
+      "youtubeTitle": "Ansible",
+      "category": "AUTOMATION",
+      "format": "COURSE SERIES",
+      "duration": "14 lessons",
+      "type": "playlist",
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLVx1qovxj-al0Knm1A0eEXfGyd5kCi16p",
+      "summary": "Follow the channel's Ansible course from setup and inventory through playbooks, variables, roles and more.",
+      "points": [
+        "Set up Ansible and its inventory.",
+        "Practice playbooks and automation tasks.",
+        "Continue through variables, roles and other course lessons."
+      ]
+    },
+    {
+      "id": "v2vRiTVjVAE",
+      "slug": "helm-kubernetes-course",
+      "title": "Helm Tutorial for Beginners 2026 — Full Kubernetes Course",
+      "youtubeTitle": "Helm Tutorial for Beginners 2026 — Full Kubernetes Course",
+      "category": "CLOUD NATIVE",
+      "format": "FULL COURSE",
+      "duration": "59m",
+      "published": "2026-05-25",
+      "summary": "Move from Helm basics toward installing, upgrading and rolling back Kubernetes applications with charts.",
+      "points": [
+        "Understand Helm charts and releases.",
+        "Install and upgrade Kubernetes applications.",
+        "Explore rollback and repeatable deployment workflows."
+      ]
+    },
+    {
+      "id": "_F1ulJWsipc",
+      "slug": "prometheus-crash-course",
+      "title": "Prometheus Crash Course 2026 — Complete Guide",
+      "youtubeTitle": "Prometheus Crash Course 2026 — Complete Guide",
+      "category": "OBSERVABILITY",
+      "format": "CRASH COURSE",
+      "duration": "55m",
+      "published": "2026-04-27",
+      "summary": "Learn Prometheus monitoring from setup through PromQL queries, alerting and Grafana dashboards.",
+      "points": [
+        "Set up a Prometheus monitoring stack.",
+        "Query metrics with PromQL.",
+        "Explore alerting and Grafana dashboards."
+      ]
+    },
+    {
+      "id": "xkQDUKEQisE",
+      "slug": "datadog-full-course",
+      "title": "Datadog Tutorial for Beginners — Full Course 2026",
+      "youtubeTitle": "Datadog Tutorial for Beginners – Full Course 2026",
+      "category": "OBSERVABILITY",
+      "format": "FULL COURSE",
+      "duration": "33m",
+      "published": "2026-02-23",
+      "summary": "Set up Datadog monitoring from scratch and learn how dashboards and alerts help you understand production systems.",
+      "points": [
+        "Get started with Datadog monitoring.",
+        "Build useful dashboards.",
+        "Create alerts that surface important changes."
+      ]
+    }
+  ],
+  "roadmap": {
+    "title": "DevOps Roadmap 2026 — Zero to Engineer",
+    "url": "https://www.youtube.com/playlist?list=PLVx1qovxj-amIURABLy_kk3224o_pq8HR",
+    "count": "17 videos",
+    "summary": "A guided playlist that connects Linux, Git, containers, CI/CD and observability into a longer learning path."
+  }
+}

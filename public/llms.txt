@@ -4,7 +4,22 @@ Practical DevOps, cloud, and AI coding tutorials.
 
 ## Main pages
 - Home: https://thetips4you.in/
+- Full courses and Zero to Hero: https://thetips4you.in/courses/
 - AI coding guides: https://thetips4you.in/ai-coding/
+
+## Full course watch pages
+- Linux Full Course for Beginners 2026: https://thetips4you.in/courses/linux-full-course/
+- Git Tutorial for Beginners: Learn Git in 1 Hour (2026): https://thetips4you.in/courses/git-beginner-course/
+- Docker Tutorial for Beginners — Full Course: https://thetips4you.in/courses/docker-full-course/
+- Kubernetes Tutorial — From Zero to Deployed: https://thetips4you.in/courses/kubernetes-crash-course/
+- GitHub Actions Tutorial — CI/CD from Scratch: https://thetips4you.in/courses/github-actions-cicd/
+- Jenkins Tutorial for Beginners — Full Course: https://thetips4you.in/courses/jenkins-full-course/
+- GitLab CI/CD Full Course — Zero to Hero: https://thetips4you.in/courses/gitlab-cicd-zero-to-hero/
+- AWS Tutorial for Beginners 2026 — EC2, S3, Lambda & More: https://thetips4you.in/courses/aws-beginner-course/
+- Ansible Tutorial for Beginners — 14-Lesson Series: https://thetips4you.in/courses/ansible-course-series/
+- Helm Tutorial for Beginners 2026 — Full Kubernetes Course: https://thetips4you.in/courses/helm-kubernetes-course/
+- Prometheus Crash Course 2026 — Complete Guide: https://thetips4you.in/courses/prometheus-crash-course/
+- Datadog Tutorial for Beginners — Full Course 2026: https://thetips4you.in/courses/datadog-full-course/
 
 ## AI coding watch pages
 - Claude Code for FREE Forever — OpenRouter Setup (2026): https://thetips4you.in/ai-coding/claude-code-openrouter/
