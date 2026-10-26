@@ -23,6 +23,9 @@ The linked pages provide topic summaries, embedded videos, and direct links to t
 - [Prometheus Crash Course 2026 — Complete Guide](https://thetips4you.in/courses/prometheus-crash-course/): Learn Prometheus monitoring from setup through PromQL queries, alerting and Grafana dashboards.
 - [Datadog Tutorial for Beginners — Full Course 2026](https://thetips4you.in/courses/datadog-full-course/): Set up Datadog monitoring from scratch and learn how dashboards and alerts help you understand production systems.
 
+## Practical guide
+- [GitHub Actions CI for a Vite site](https://thetips4you.in/guides/github-actions-vite-ci/): A complete Node/Vite build workflow and troubleshooting steps.
+
 ## AI coding guides
 - [Claude Code for FREE Forever — OpenRouter Setup (2026)](https://thetips4you.in/ai-coding/claude-code-openrouter/): A practical walkthrough of connecting Claude Code to OpenRouter and trying free-tier model options for coding tasks.
 - [OpenCode: Free AI Coding Agent Setup Guide 2026](https://thetips4you.in/ai-coding/opencode-free-agent/): Get started with OpenCode, an open-source AI coding agent, and explore no-subscription model options.

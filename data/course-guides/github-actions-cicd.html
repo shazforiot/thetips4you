@@ -1,0 +1,11 @@
+<section class="practice" id="practice" aria-labelledby="actions-practice-title">
+  <div class="practice-top"><p class="kicker">FOLLOW-ALONG LAB / CI PIPELINE</p><h2 id="actions-practice-title">What happens when you push a change?</h2><p>A GitHub Actions workflow can check a project automatically. This small Vite example gives you a concrete way to connect triggers, jobs, steps, and build results.</p></div>
+  <div class="practice-columns">
+    <div class="practice-main">
+      <section class="practice-step"><span class="step-count">01 / TRIGGER</span><h3>A push or pull request starts the run</h3><p>Keep the workflow in <code>.github/workflows/ci.yml</code>. Configure <code>push</code> and <code>pull_request</code> for the branch you want to check.</p></section>
+      <section class="practice-step"><span class="step-count">02 / BUILD</span><h3>The runner repeats your local steps</h3><p>Checkout retrieves the repository, setup-node chooses a Node version, <code>npm ci</code> installs the lockfile versions, and <code>npm run build</code> checks that Vite can produce an output bundle.</p></section>
+      <section class="practice-step"><span class="step-count">03 / VERIFY</span><h3>Read the run, not just the badge</h3><p>Open the repository’s Actions tab. A failed build points to a specific step and log. This workflow checks the build; a separate deployment workflow publishes the site.</p><a class="practice-action" href="/guides/github-actions-vite-ci/">Open the complete Vite CI example <span aria-hidden="true">↗</span></a></section>
+    </div>
+    <aside class="practice-aside"><p class="kicker">COMMON FAILURES</p><h3>What to inspect first</h3><p><strong><code>npm ci</code> fails:</strong> confirm <code>package-lock.json</code> is committed and matches <code>package.json</code>.</p><p><strong>Build script missing:</strong> check the <code>scripts.build</code> entry in <code>package.json</code>.</p><p><strong>Works locally only:</strong> compare the Node version and required environment variables.</p><div class="practice-source">Reference: <a href="https://docs.github.com/en/actions/tutorials/build-and-test-code/nodejs" target="_blank" rel="noopener noreferrer">GitHub’s Node.js CI guide ↗</a></div></aside>
+  </div>
+</section>

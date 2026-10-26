@@ -41,6 +41,7 @@ def card(course):
 description = "Explore Thetips4you full courses, crash courses and learning series for Linux, Git, Docker, Kubernetes, GitHub Actions, Jenkins, AWS, Ansible, Prometheus and more."
 schema = [{"@context":"https://schema.org","@type":"CollectionPage","name":"Full Courses & Zero to Hero | Thetips4you","description":description,"url":DOMAIN+"/courses/","publisher":{"@type":"Organization","name":"Thetips4you","url":DOMAIN+"/"}},breadcrumbs()]
 hub = f'''<section class="course-hero wrap"><p class="kicker">THETIPS4YOU / THE COURSE LIBRARY</p><h1>Learn the whole <em>workflow.</em></h1><p class="lead">Full courses, crash courses and guided series from the Thetips4you YouTube channel. Choose a skill, press play and keep building.</p><div class="actions"><a class="button" href="#course-list">Explore {len(courses)} learning paths ↓</a><a href="{esc(roadmap['url'])}" target="_blank" rel="noopener noreferrer">Follow the DevOps playlist ↗</a></div><div class="course-index"><span>01 / FOUNDATIONS</span><span>02 / BUILD &amp; AUTOMATE</span><span>03 / OPERATE</span></div></section><section class="wrap section" id="course-list"><div class="section-heading"><div><p class="kicker">PICK YOUR NEXT SKILL</p><h2>Find your next deep dive.</h2></div><p>Browse complete videos and guided series, each with a dedicated page and a direct YouTube link.</p></div><div class="course-grid">{''.join(card(c) for c in courses)}</div></section><section class="wrap playlist-banner"><div><p class="kicker">PREFER A LEARNING PATH?</p><h2>{esc(roadmap['title'])}</h2><p>{esc(roadmap['summary'])}</p></div><a class="button" href="{esc(roadmap['url'])}" target="_blank" rel="noopener noreferrer">Open {esc(roadmap['count'])} on YouTube ↗</a></section><section class="wrap bridge"><div><p class="kicker">KEEP EXPLORING</p><h2>Build with AI coding agents.</h2></div><div><p>After the foundations, try practical Claude Code, OpenCode and Codex tutorials.</p><a href="/ai-coding/">Browse AI coding guides ↗</a></div></section>'''
+hub += '<section class="wrap guide-strip"><div><p class="kicker">TRY IT YOURSELF</p><h2>From video to working example.</h2><p>Follow along with a complete GitHub Actions workflow, then practice Git and Kubernetes with small, testable labs.</p></div><div class="guide-strip-links"><a href="/guides/github-actions-vite-ci/">GitHub Actions CI for a Vite site →</a><a href="/courses/git-beginner-course/#practice">Git branching practice →</a><a href="/courses/kubernetes-crash-course/#practice">Kubernetes first deployment →</a></div></section>'
 (COURSES_DIR/"index.html").write_text(head("Full Courses & Zero to Hero | Thetips4you",description,"/courses/",schema=schema)+hub+foot(),encoding="utf-8")
 
 for course in courses:
@@ -50,6 +51,10 @@ for course in courses:
     points = "".join(f"<li>{esc(point)}</li>" for point in course["points"])
     related = "".join(f'<a href="{esc(course_url(other))}">{esc(other["title"])} →</a>' for other in courses if other["id"] != course["id"] and other in courses[:4])
     page = f'''<div class="wrap breadcrumbs"><a href="/">Home</a> / <a href="/courses/">Full courses</a> / <span>{esc(course['title'])}</span></div><article class="wrap watch"><p class="kicker">{esc(course['category'])} / {esc(course['format'])} / {esc(course['duration'])}</p><h1>{esc(course['title'])}</h1><p class="lead">{esc(course['summary'])}</p><div class="watch-grid"><div><div class="player"><iframe src="https://www.youtube-nocookie.com/embed/{esc(course['id'])}" title="{esc(course['title'])}" width="960" height="540" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="caption">Want to watch on the channel? <a href="{esc(yt(course))}" target="_blank" rel="noopener noreferrer">Open this course on YouTube ↗</a></p><a class="watch-cta button" href="{esc(yt(course))}" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube ↗</a></div><aside class="lesson"><p class="kicker">IN THIS COURSE</p><h2>What you'll explore</h2><ul>{points}</ul><p class="lesson-duration">Runtime: {esc(course['duration'])}</p></aside></div><div class="related"><div><p class="kicker">CONTINUE LEARNING</p><h2>Choose another course.</h2></div><div>{related}<a href="/courses/">All full courses and Zero to Hero videos →</a></div></div></article>'''
+    lab_file = ROOT / "data/course-guides" / f"{course['slug']}.html"
+    if lab_file.exists():
+        lab = lab_file.read_text(encoding="utf-8")
+        page = page.replace('<div class="related">', lab + '<div class="related">', 1)
     if course.get("type") == "playlist":
         playlist_id = course["playlistUrl"].split("list=", 1)[1]
         page = page.replace(
@@ -68,8 +73,20 @@ for course in courses:
             page = page.replace('</div><aside class="lesson">', extra+'</div><aside class="lesson">')
     (folder/"index.html").write_text(head(course["title"]+" | Thetips4you",course["summary"],path,thumb(course),schema)+page+foot(),encoding="utf-8")
 
+guide_path = "/guides/github-actions-vite-ci/"
+guide_folder = PUBLIC / "guides/github-actions-vite-ci"
+guide_folder.mkdir(parents=True, exist_ok=True)
+guide_title = "GitHub Actions CI for a Vite site: workflow YAML and fixes | Thetips4you"
+guide_desc = "Build a Vite site on every push and pull request with GitHub Actions. Copy the workflow YAML, check the run, and troubleshoot common Node CI errors."
+guide_schema = [
+    {"@context":"https://schema.org","@type":"TechArticle","headline":"Build a Vite site with GitHub Actions CI","description":guide_desc,"url":DOMAIN+guide_path,"author":{"@type":"Organization","name":"Thetips4you"},"publisher":{"@type":"Organization","name":"Thetips4you","url":DOMAIN+"/"}},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":DOMAIN+"/"},{"@type":"ListItem","position":2,"name":"Full courses","item":DOMAIN+"/courses/"},{"@type":"ListItem","position":3,"name":"GitHub Actions CI for Vite","item":DOMAIN+guide_path}]}
+]
+guide_body = (ROOT / "data/guides/github-actions-vite-ci.html").read_text(encoding="utf-8")
+(guide_folder/"index.html").write_text(head(guide_title,guide_desc,guide_path,schema=guide_schema)+guide_body+foot(),encoding="utf-8")
+
 ai_watch = [x for x in ai_videos if x["watch"]]
-locations = [("/",None),("/ai-coding/",None)] + [(f"/ai-coding/{x['slug']}/",x) for x in ai_watch] + [("/courses/",None)] + [(course_url(c),c) for c in courses]
+locations = [("/",None),("/ai-coding/",None)] + [(f"/ai-coding/{x['slug']}/",x) for x in ai_watch] + [("/courses/",None)] + [(course_url(c),c) for c in courses] + [(guide_path,None)]
 lines = ['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">']
 for path, item in locations:
     video = ""

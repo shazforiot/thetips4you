@@ -1,0 +1,45 @@
+<section class="practice" id="practice" aria-labelledby="kubernetes-practice-title">
+  <div class="practice-top"><p class="kicker">FOLLOW-ALONG LAB / FIRST DEPLOYMENT</p><h2 id="kubernetes-practice-title">Run a web app behind a Kubernetes Service.</h2><p>This small manifest puts two NGINX Pods behind one internal Service. It is a practice example you can run on a local cluster before adapting the pattern to your own application.</p></div>
+  <div class="practice-columns">
+    <div class="practice-main">
+      <section class="practice-step"><span class="step-count">01 / CHECK</span><h3>Confirm your cluster is ready</h3><p>Use a local cluster such as kind or minikube, with <code>kubectl</code> pointed at it. <code>kubectl get nodes</code> should list at least one ready node.</p><pre><code>kubectl get nodes
+kubectl config current-context</code></pre></section>
+      <section class="practice-step"><span class="step-count">02 / DECLARE</span><h3>Save this as <code>hello-web.yaml</code></h3><p>The Deployment keeps two Pods running. The Service uses the matching <code>app: hello-web</code> label to reach them.</p><pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-web
+  template:
+    metadata:
+      labels:
+        app: hello-web
+    spec:
+      containers:
+        - name: web
+          image: nginx:stable
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-web
+spec:
+  type: ClusterIP
+  selector:
+    app: hello-web
+  ports:
+    - port: 80
+      targetPort: 80</code></pre></section>
+      <section class="practice-step"><span class="step-count">03 / VERIFY</span><h3>Apply, inspect, and view the result</h3><pre><code>kubectl apply -f hello-web.yaml
+kubectl rollout status deployment/hello-web
+kubectl get pods -l app=hello-web
+kubectl port-forward service/hello-web 8080:80</code></pre><p class="practice-check">Check: while port forwarding runs, open <code>http://127.0.0.1:8080/</code> to see the sample page. Stop forwarding with Ctrl+C.</p></section>
+    </div>
+    <aside class="practice-aside"><p class="kicker">TROUBLESHOOTING</p><h3>Follow the labels.</h3><p>If the Service has no endpoints, confirm its selector matches the Pod template’s labels.</p><p>If Pods are not ready, inspect <code>kubectl describe pod</code> and <code>kubectl logs deployment/hello-web</code> for scheduling or image errors.</p><p>For production, pin an image version or digest instead of a moving tag.</p><div class="practice-source">References: <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/" target="_blank" rel="noopener noreferrer">Deployments ↗</a> · <a href="https://kubernetes.io/docs/concepts/services-networking/service/" target="_blank" rel="noopener noreferrer">Services ↗</a></div></aside>
+  </div>
+</section>

@@ -2,7 +2,7 @@
 
 The public site is hosted with GitHub Pages at <https://thetips4you.in/>.
 
-This repository combines a React homepage with static, crawler-readable course and AI coding pages. The homepage highlights full courses, Zero to Hero videos, and AI coding tutorials. Course pages live at /courses/; AI coding guides live at /ai-coding/.
+This repository combines a React homepage with static, crawler-readable course and AI coding pages. The homepage highlights full courses, Zero to Hero videos, and AI coding tutorials. Course pages live at /courses/; AI coding guides live at /ai-coding/. A practical GitHub Actions/Vite CI guide lives at /guides/github-actions-vite-ci/.
 
 ## Local development
 
@@ -36,11 +36,11 @@ Regenerate the static pages and sitemap after changing either video dataset:
     python scripts/generate_ai_pages.py
     python scripts/generate_course_pages.py
 
-The course generator writes /courses/, twelve course pages, including the Ansible playlist, a combined video sitemap, and llms.txt. Keep titles, dates, runtimes, descriptions, and links aligned with the videos.
+The course generator writes /courses/, twelve course pages, including the Ansible playlist, the GitHub Actions/Vite CI guide, a combined video sitemap, and llms.txt. The Git, GitHub Actions, and Kubernetes course pages include original companion labs from data/course-guides/. The standalone guide content lives in data/guides/. Keep titles, dates, runtimes, descriptions, and links aligned with the videos.
 
 ## Discoverability
 
-- /sitemap.xml lists the homepage, course and AI guide pages, and fifteen video watch pages with video sitemap metadata; the Ansible playlist page is listed without a video entry.
+- /sitemap.xml lists the homepage, course and AI guide pages, the GitHub Actions/Vite CI guide, and fifteen video watch pages with video sitemap metadata; the Ansible playlist page is listed without a video entry.
 - /robots.txt points crawlers to the sitemap.
 - /llms.txt is a supplementary Markdown index for agents that choose to use it. HTML pages link to it with rel=describedby.
 - /agents.txt declares no agent action endpoints for this content-only site and points to the content guide.

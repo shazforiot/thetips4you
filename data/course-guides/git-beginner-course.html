@@ -1,0 +1,23 @@
+<section class="practice" id="practice" aria-labelledby="git-practice-title">
+  <div class="practice-top"><p class="kicker">FOLLOW-ALONG LAB / GIT BASICS</p><h2 id="git-practice-title">Build a small history you can actually inspect.</h2><p>Use a throwaway folder to see how a working tree, commits, and branches fit together. These commands work with a recent Git installation on Windows, macOS, or Linux.</p></div>
+  <div class="practice-columns">
+    <div class="practice-main">
+      <section class="practice-step"><span class="step-count">01 / START</span><h3>Create a repository</h3><p>Open a terminal in a new folder. The <code>-b main</code> option names the initial branch; local <code>user.name</code> and <code>user.email</code> identify your practice commits.</p><pre><code>mkdir git-practice
+cd git-practice
+git init -b main
+git config user.name "Your Name"
+git config user.email "you@example.com"</code></pre></section>
+      <section class="practice-step"><span class="step-count">02 / SAVE</span><h3>Make your first commit</h3><p>Create a file called <code>README.md</code> in your editor and add a sentence about what you are learning. Then stage that file and save the snapshot.</p><pre><code>git status
+git add README.md
+git commit -m "Start the practice project"
+git log --oneline</code></pre><p class="practice-check">Check: <code>git log --oneline</code> should show your commit.</p></section>
+      <section class="practice-step"><span class="step-count">03 / BRANCH</span><h3>Try a change without touching main</h3><p>Create a branch, add a second sentence to the README, and commit it. Switch back to <code>main</code> and merge your work.</p><pre><code>git switch -c feature/notes
+git add README.md
+git commit -m "Add learning notes"
+git switch main
+git merge feature/notes
+git log --oneline --graph --decorate --all</code></pre><p class="practice-check">Check: your new commit appears in the history on <code>main</code>.</p></section>
+    </div>
+    <aside class="practice-aside"><p class="kicker">WHEN SOMETHING LOOKS WRONG</p><h3>Two useful checks</h3><p><strong>“Nothing to commit”</strong> means Git sees no staged change. Save the file, run <code>git status</code>, then stage it again.</p><p><strong>Identity unknown</strong> means Git needs a name and email before the commit. Run the two <code>git config</code> commands above in this repository.</p><div class="practice-source">Reference: <a href="https://git-scm.com/docs/gittutorial" target="_blank" rel="noopener noreferrer">Official Git tutorial ↗</a></div></aside>
+  </div>
+</section>

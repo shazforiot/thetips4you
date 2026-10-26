@@ -78,3 +78,18 @@
 @media(max-width:760px){.course-lead-image{aspect-ratio:16/9;max-height:none}.course-side-list{grid-template-columns:1fr}.course-mini{grid-template-columns:35% minmax(0,1fr)}.course-mini-cta{min-height:130px}.course-mini h3{font-size:17px}}
 @media(max-width:420px){.course-mini h3{font-size:15px}.course-mini .course-meta{font-size:8px}.course-mini-link{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.course-mini-cta{transition:none}.course-mini-cta:hover{transform:none}}
+/* Hands-on guides on the home page */
+.hands-on{border-top:1px solid var(--border)}
+.hands-on-heading{display:grid;grid-template-columns:1fr .65fr;gap:40px;align-items:end;margin-bottom:30px}
+.hands-on-heading h2{font-size:clamp(33px,3.6vw,52px);letter-spacing:-.05em}
+.hands-on-heading>p{font-size:15px;color:#b4c0ad;line-height:1.7}
+.hands-on-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.hands-on-card{min-height:270px;display:flex;flex-direction:column;align-items:flex-start;padding:27px;border:1px solid #4c5a43;border-radius:9px;background:#1d261d;transition:transform .2s,border-color .2s}
+.hands-on-card:hover{transform:translateY(-4px);border-color:var(--orange)}
+.hands-on-card.primary-guide{background:linear-gradient(135deg,#35462a,#1e281d)}
+.guide-number{font:700 11px ui-monospace,Consolas,monospace;letter-spacing:1.5px;color:var(--orange)}
+.hands-on-card h3{font-size:clamp(20px,1.8vw,26px);line-height:1.3;letter-spacing:-.04em;margin:23px 0 10px}
+.hands-on-card p{font-size:14px;line-height:1.65;color:#b5c1af}
+.hands-on-card>span:last-child{display:flex;gap:6px;align-items:center;color:var(--orange);font-size:13px;font-weight:700;margin-top:auto;padding-top:25px}
+@media(max-width:760px){.hands-on-heading{grid-template-columns:1fr;gap:14px}.hands-on-grid{grid-template-columns:1fr}.hands-on-card{min-height:220px}}
+@media(prefers-reduced-motion:reduce){.hands-on-card{transition:none}.hands-on-card:hover{transform:none}}

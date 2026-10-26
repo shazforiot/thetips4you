@@ -87,7 +87,7 @@ export default function Home() {
       <a className="skip" href="#main">Skip to content</a>
       <header className="header">
         <a className="brand" href="#" aria-label="Thetips4you home"><span className="brand-mark"><Terminal size={22}/></span>thetips<span className="brand-four">4</span>you<span className="brand-dot">.</span></a>
-        <nav aria-label="Main navigation"><a href="#ai-coding">AI coding agents</a><a href="#courses">Full courses</a><a href="#tutorials">DevOps tutorials</a><a href="#roadmap">Learning path</a><a href="#about">About</a></nav>
+        <nav aria-label="Main navigation"><a href="#ai-coding">AI coding agents</a><a href="#courses">Full courses</a><a href="#guides">Hands-on guides</a><a href="#tutorials">DevOps tutorials</a><a href="#roadmap">Learning path</a><a href="#about">About</a></nav>
         <a className="youtube-link" href={channel} target="_blank" rel="noreferrer"><Play size={18}/><span>Visit channel</span><ArrowUpRight size={15}/></a>
       </header>
       <div className="ai-ribbon"><span className="ribbon-new">NEW / AI CODING</span><span>Claude Code, OpenCode, Codex and agent workflows</span><a href="/ai-coding/">Explore the field guide <ArrowUpRight size={15}/></a></div>
@@ -96,8 +96,8 @@ export default function Home() {
         <section className="hero">
           <div className="hero-copy">
             <div className="eyebrow"><span className="status-dot"/> YOUR NEXT SKILL STARTS HERE</div>
-            <h1>Less theory.<br/>More <span className="outline-word">building.</span></h1>
-            <p className="hero-description">Make sense of DevOps, cloud, and AI coding agents.<br/>Practical tutorials. Real workflows.<br/>One breakthrough at a time.</p>
+            <h1>DevOps courses.<br/><span className="outline-word">AI coding guides.</span></h1>
+            <p className="hero-description">Learn Git, CI/CD, Kubernetes, cloud and AI coding agents.<br/>Watch the course, try the example, build your next skill.</p>
             <div className="hero-actions"><a className="button primary" href="#ai-coding"><Play size={17} fill="currentColor"/>Explore AI coding<ArrowRight size={18}/></a><a className="text-link" href="#courses">Watch full courses <ArrowUpRight size={17}/></a></div>
             <div className="hero-note"><span className="note-line"/><span>CODE. COMMIT. COLLABORATE.</span></div>
           </div>
@@ -129,13 +129,22 @@ export default function Home() {
           </div>
           <div className="course-section-footer"><span>{coursesData.courses.length} curated videos and series · Foundations to observability</span><a href="/courses/">Open the full course library <ArrowUpRight size={16}/></a></div>
         </section>
+        <section className="hands-on section" id="guides" aria-labelledby="guides-heading">
+          <div className="hands-on-heading"><div><p className="eyebrow muted">03 / PRACTICE AFTER YOU WATCH</p><h2 id="guides-heading">One video. One working example.</h2></div><p>Short labs and copyable examples help you turn a course into something you can run and inspect.</p></div>
+          <div className="hands-on-grid">
+            <a className="hands-on-card primary-guide" href="/guides/github-actions-vite-ci/"><span className="guide-number">01 / CI/CD</span><h3>Build a Vite site with GitHub Actions</h3><p>Copy a complete workflow, check each step, and fix common Node build errors.</p><span>Read the full guide <ArrowUpRight size={17}/></span></a>
+            <a className="hands-on-card" href="/courses/git-beginner-course/#practice"><span className="guide-number">02 / GIT</span><h3>Commit, branch, and merge</h3><p>Make a practice repository and inspect the history you created.</p><span>Try the Git lab <ArrowUpRight size={17}/></span></a>
+            <a className="hands-on-card" href="/courses/kubernetes-crash-course/#practice"><span className="guide-number">03 / KUBERNETES</span><h3>Deploy your first app</h3><p>Apply a Deployment and Service, then verify that the app responds.</p><span>Try the Kubernetes lab <ArrowUpRight size={17}/></span></a>
+          </div>
+        </section>
+
         <section className="tutorials section" id="tutorials">
-          <div className="section-top"><div><p className="eyebrow muted">03 / WATCH. TRY. UNDERSTAND.</p><h2>Build your next skill.</h2></div><a className="text-link" href={channel+"/videos"} target="_blank" rel="noreferrer">All videos <ArrowUpRight size={18}/></a></div>
+          <div className="section-top"><div><p className="eyebrow muted">04 / WATCH. TRY. UNDERSTAND.</p><h2>Build your next skill.</h2></div><a className="text-link" href={channel+"/videos"} target="_blank" rel="noreferrer">All videos <ArrowUpRight size={18}/></a></div>
           <div className="video-grid">{videos.map(video=><a key={video.id} className="video-card" href={"https://www.youtube.com/watch?v="+video.id} target="_blank" rel="noreferrer"><div className="thumbnail"><img src={"https://i.ytimg.com/vi/"+video.id+"/hqdefault.jpg"} alt="" loading="lazy"/><span className="play-badge"><Play size={21} fill="currentColor"/></span><span className="video-index">{video.number}</span></div><div className="video-meta">{video.tag}<ArrowUpRight size={17}/></div><h3>{video.title}</h3><p>{video.description}</p></a>)}</div>
         </section>
 
         <section className="roadmap section" id="roadmap">
-          <div className="roadmap-intro"><p className="eyebrow muted">04 / CONNECT THE DOTS</p><h2>A direction.<br/>Not another<br/><span>rabbit hole.</span></h2><p>Start with the foundations. Connect the tools. Build a workflow you understand from end to end.</p><a className="button secondary" href="https://www.thetips4you.com/devops-roadmap-2026-8-skills-to-master-with-free-videos/" target="_blank" rel="noreferrer">Explore the DevOps roadmap <ArrowUpRight size={18}/></a></div>
+          <div className="roadmap-intro"><p className="eyebrow muted">05 / CONNECT THE DOTS</p><h2>A direction.<br/>Not another<br/><span>rabbit hole.</span></h2><p>Start with the foundations. Connect the tools. Build a workflow you understand from end to end.</p><a className="button secondary" href="https://www.thetips4you.com/devops-roadmap-2026-8-skills-to-master-with-free-videos/" target="_blank" rel="noreferrer">Explore the DevOps roadmap <ArrowUpRight size={18}/></a></div>
           <div className="path-list">{[
             ["01","Find your footing","Linux · Git · Scripting",Terminal,"xEckAK9pYyY","Linux full course"],
             ["02","Package & automate","Docker · Jenkins · CI/CD",Box,"ZyWBs0CU2wk","Docker beginner tutorial"],
@@ -144,7 +153,7 @@ export default function Home() {
           ].map(([n,title,sub,Icon,videoId,videoTitle])=>{const I=Icon as typeof Terminal;return <a className="path-step" key={String(n)} href={"https://www.youtube.com/watch?v="+videoId} target="_blank" rel="noreferrer" aria-label={String(title)+": watch "+String(videoTitle)+" on YouTube (opens in a new tab)"}><span className="step-num">{String(n)}</span><I size={22}/><div><h3>{String(title)}</h3><p>{String(sub)}</p></div><ArrowUpRight className="step-arrow" size={20} aria-hidden="true"/></a>})}</div>
         </section>
 
-        <section className="about section" id="about"><div className="eyebrow muted">05 / THE IDEA BEHIND THETIPS4YOU</div><div className="about-content"><h2>Technology moves fast.<br/>Let’s figure it out <em>together.</em></h2><div><p>Thetips4you is a place to turn technical curiosity into practical skills. From your first container to a complete delivery pipeline, there’s always something new to build.</p><a className="text-link" href={channel+"?sub_confirmation=1"} target="_blank" rel="noreferrer">Join us on YouTube <ArrowUpRight size={18}/></a></div></div></section>
+        <section className="about section" id="about"><div className="eyebrow muted">06 / THE IDEA BEHIND THETIPS4YOU</div><div className="about-content"><h2>Technology moves fast.<br/>Let’s figure it out <em>together.</em></h2><div><p>Thetips4you is a place to turn technical curiosity into practical skills. From your first container to a complete delivery pipeline, there’s always something new to build.</p><a className="text-link" href={channel+"?sub_confirmation=1"} target="_blank" rel="noreferrer">Join us on YouTube <ArrowUpRight size={18}/></a></div></div></section>
       </main>
       <footer><a className="brand" href="#">thetips<span className="brand-four">4</span>you.</a><span>Code. Commit. Collaborate.</span><div><a href="/courses/">Full courses <ArrowUpRight size={14}/></a><a href="/ai-coding/">AI coding <ArrowUpRight size={14}/></a><a href="https://www.thetips4you.com/" target="_blank" rel="noreferrer">Read the blog <ArrowUpRight size={14}/></a><a href={channel} target="_blank" rel="noreferrer">YouTube <ArrowUpRight size={14}/></a></div></footer>
     </div>

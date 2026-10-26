@@ -34,6 +34,11 @@ def generate_llms():
     ]
     for course in courses:
         lines.append(entry(course["title"], f"{DOMAIN}/courses/{course['slug']}/", course["summary"]))
+    lines += [
+        "",
+        "## Practical guide",
+        entry("GitHub Actions CI for a Vite site", DOMAIN + "/guides/github-actions-vite-ci/", "A complete Node/Vite build workflow and troubleshooting steps."),
+    ]
     lines += ["", "## AI coding guides"]
     for guide in guides:
         if guide["watch"]:
