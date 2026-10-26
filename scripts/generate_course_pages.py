@@ -1,6 +1,7 @@
 from pathlib import Path
 import html
 import json
+from generate_llms import generate_llms
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
@@ -25,7 +26,7 @@ def head(title, description, path, image=None, schema=None):
     canonical = DOMAIN + path
     image = image or DOMAIN + "/og-cover.png"
     structured = f'<script type="application/ld+json">{json_ld(schema)}</script>' if schema else ""
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow,max-video-preview:-1"><title>{esc(title)}</title><meta name="description" content="{esc(description)}"><link rel="canonical" href="{esc(canonical)}"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#111310"><meta property="og:type" content="website"><meta property="og:site_name" content="Thetips4you"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{esc(canonical)}"><meta property="og:image" content="{esc(image)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{esc(image)}"><link rel="stylesheet" href="/courses/style.css">{structured}</head><body><a class="skip" href="#main">Skip to content</a><header><div class="wrap head"><a class="brand" href="/">thetips<span>4</span>you.</a><nav aria-label="Main navigation"><a href="/">Home</a><a href="/courses/" aria-current="page">Full courses</a><a href="/ai-coding/">AI coding</a></nav><a class="channel" href="https://www.youtube.com/@Thetips4you" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></header><main id="main">'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow,max-video-preview:-1"><title>{esc(title)}</title><meta name="description" content="{esc(description)}"><link rel="canonical" href="{esc(canonical)}"><link rel="describedby" href="/llms.txt" type="text/markdown"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#111310"><meta property="og:type" content="website"><meta property="og:site_name" content="Thetips4you"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{esc(canonical)}"><meta property="og:image" content="{esc(image)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{esc(image)}"><link rel="stylesheet" href="/courses/style.css">{structured}</head><body><a class="skip" href="#main">Skip to content</a><header><div class="wrap head"><a class="brand" href="/">thetips<span>4</span>you.</a><nav aria-label="Main navigation"><a href="/">Home</a><a href="/courses/" aria-current="page">Full courses</a><a href="/ai-coding/">AI coding</a></nav><a class="channel" href="https://www.youtube.com/@Thetips4you" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></header><main id="main">'''
 def foot():
     return '</main><footer><div class="wrap foot"><a class="brand" href="/">thetips<span>4</span>you.</a><p>Practical DevOps, cloud and AI coding tutorials.</p><a href="https://www.youtube.com/@Thetips4you" target="_blank" rel="noopener noreferrer">Visit the channel ↗</a></div></footer></body></html>'
 def breadcrumbs(course=None):
@@ -77,5 +78,5 @@ for path, item in locations:
     lines.append(f'  <url><loc>{DOMAIN}{esc(path)}</loc>{video}</url>')
 lines.append("</urlset>")
 (PUBLIC/"sitemap.xml").write_text("\n".join(lines)+"\n",encoding="utf-8")
-(PUBLIC/"llms.txt").write_text("# Thetips4you\n\nPractical DevOps, cloud, and AI coding tutorials.\n\n## Main pages\n- Home: "+DOMAIN+"/\n- Full courses and Zero to Hero: "+DOMAIN+"/courses/\n- AI coding guides: "+DOMAIN+"/ai-coding/\n\n## Full course watch pages\n"+"".join("- "+c["title"]+": "+DOMAIN+course_url(c)+"\n" for c in courses)+"\n## AI coding watch pages\n"+"".join("- "+x["title"]+": "+DOMAIN+f"/ai-coding/{x['slug']}/"+"\n" for x in ai_watch)+"\n## Official channel\n- https://www.youtube.com/@Thetips4you\n",encoding="utf-8")
+generate_llms()
 print(f"Generated {len(courses)} course pages and {len(locations)} sitemap URLs")

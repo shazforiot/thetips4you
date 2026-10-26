@@ -1,5 +1,6 @@
 from pathlib import Path
 import json, html
+from generate_llms import generate_llms
 r=Path(__file__).resolve().parents[1]
 p=r/'public'
 a=p/'ai-coding'
@@ -11,7 +12,7 @@ def link(x): return '/ai-coding/'+x['slug']+'/' if x['watch'] else 'https://www.
 def head(title,description,canonical,image=None,schema=None):
     image=image or D+'/og-cover.png'
     ld='<script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('<','\\u003c')+'</script>' if schema else ''
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow,max-video-preview:-1"><title>{e(title)}</title><meta name="description" content="{e(description)}"><link rel="canonical" href="{e(canonical)}"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#111310"><meta property="og:type" content="website"><meta property="og:site_name" content="Thetips4you"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(description)}"><meta property="og:url" content="{e(canonical)}"><meta property="og:image" content="{e(image)}"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="/ai-coding/style.css">{ld}</head><body><a class="skip" href="#main">Skip to content</a><header><div class="wrap head"><a class="brand" href="/">thetips<span>4</span>you.</a><nav aria-label="Main navigation"><a href="/">Home</a><a href="/ai-coding/">AI coding</a><a href="/courses/">Full courses</a></nav><a class="channel" href="https://www.youtube.com/@Thetips4you" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></header><main id="main">'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow,max-video-preview:-1"><title>{e(title)}</title><meta name="description" content="{e(description)}"><link rel="canonical" href="{e(canonical)}"><link rel="describedby" href="/llms.txt" type="text/markdown"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#111310"><meta property="og:type" content="website"><meta property="og:site_name" content="Thetips4you"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(description)}"><meta property="og:url" content="{e(canonical)}"><meta property="og:image" content="{e(image)}"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="/ai-coding/style.css">{ld}</head><body><a class="skip" href="#main">Skip to content</a><header><div class="wrap head"><a class="brand" href="/">thetips<span>4</span>you.</a><nav aria-label="Main navigation"><a href="/">Home</a><a href="/ai-coding/">AI coding</a><a href="/courses/">Full courses</a></nav><a class="channel" href="https://www.youtube.com/@Thetips4you" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></header><main id="main">'''
 def foot(): return '<footer><div class="wrap foot"><a class="brand" href="/">thetips<span>4</span>you.</a><p>Practical DevOps, cloud and AI coding tutorials.</p><a href="https://www.youtube.com/@Thetips4you" target="_blank" rel="noopener noreferrer">Visit the channel ↗</a></div></footer></body></html>'
 def card(x):
     t='' if x['watch'] else ' target="_blank" rel="noopener noreferrer"'
@@ -36,5 +37,5 @@ for x in v:
 urls=[D+'/',D+'/ai-coding/']+[D+link(x) for x in v if x['watch']]
 (p/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('  <url><loc>'+e(u)+'</loc></url>\n' for u in urls)+'</urlset>\n',encoding='utf-8')
 (p/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+D+'/sitemap.xml\n',encoding='utf-8')
-(p/'llms.txt').write_text('# Thetips4you\n\nPractical DevOps, cloud, and AI coding tutorials.\n\n## Main pages\n- Home: '+D+'/\n- AI coding guides: '+D+'/ai-coding/\n\n## AI coding watch pages\n'+''.join('- '+x['title']+': '+D+link(x)+'\n' for x in v if x['watch'])+'\n## Official channel\n- https://www.youtube.com/@Thetips4you\n',encoding='utf-8')
+generate_llms()
 print('Generated',len(urls),'sitemap URLs and',sum(x['watch'] for x in v),'watch pages')

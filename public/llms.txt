@@ -1,31 +1,34 @@
 # Thetips4you
 
-Practical DevOps, cloud, and AI coding tutorials.
+> Free, practical DevOps, cloud, and AI coding video tutorials from the Thetips4you YouTube channel.
 
-## Main pages
-- Home: https://thetips4you.in/
-- Full courses and Zero to Hero: https://thetips4you.in/courses/
-- AI coding guides: https://thetips4you.in/ai-coding/
+The linked pages provide topic summaries, embedded videos, and direct links to the original YouTube videos. They are not full video transcripts. Use the linked page for the current course details and attribution. Product features, pricing, and free-tier availability may change.
 
-## Full course watch pages
-- Linux Full Course for Beginners 2026: https://thetips4you.in/courses/linux-full-course/
-- Git Tutorial for Beginners: Learn Git in 1 Hour (2026): https://thetips4you.in/courses/git-beginner-course/
-- Docker Tutorial for Beginners — Full Course: https://thetips4you.in/courses/docker-full-course/
-- Kubernetes Tutorial — From Zero to Deployed: https://thetips4you.in/courses/kubernetes-crash-course/
-- GitHub Actions Tutorial — CI/CD from Scratch: https://thetips4you.in/courses/github-actions-cicd/
-- Jenkins Tutorial for Beginners — Full Course: https://thetips4you.in/courses/jenkins-full-course/
-- GitLab CI/CD Full Course — Zero to Hero: https://thetips4you.in/courses/gitlab-cicd-zero-to-hero/
-- AWS Tutorial for Beginners 2026 — EC2, S3, Lambda & More: https://thetips4you.in/courses/aws-beginner-course/
-- Ansible Tutorial for Beginners — 14-Lesson Series: https://thetips4you.in/courses/ansible-course-series/
-- Helm Tutorial for Beginners 2026 — Full Kubernetes Course: https://thetips4you.in/courses/helm-kubernetes-course/
-- Prometheus Crash Course 2026 — Complete Guide: https://thetips4you.in/courses/prometheus-crash-course/
-- Datadog Tutorial for Beginners — Full Course 2026: https://thetips4you.in/courses/datadog-full-course/
+## Start here
+- [Home](https://thetips4you.in/): Overview and featured tutorials.
+- [Full courses and Zero to Hero](https://thetips4you.in/courses/): Browse the DevOps, cloud, and observability learning paths.
+- [AI coding guides](https://thetips4you.in/ai-coding/): Browse practical AI coding agent tutorials.
 
-## AI coding watch pages
-- Claude Code for FREE Forever — OpenRouter Setup (2026): https://thetips4you.in/ai-coding/claude-code-openrouter/
-- OpenCode: Free AI Coding Agent Setup Guide 2026: https://thetips4you.in/ai-coding/opencode-free-agent/
-- Codex vs Claude Code vs Cursor: Cost & Models: https://thetips4you.in/ai-coding/codex-claude-cursor/
-- AI Skills vs Tools vs MCP: What’s the Difference in 5 mins?: https://thetips4you.in/ai-coding/skills-tools-mcp/
+## Full courses
+- [Linux Full Course for Beginners 2026](https://thetips4you.in/courses/linux-full-course/): Build a Linux foundation with the terminal, file system and commands you will use throughout DevOps and cloud work.
+- [Git Tutorial for Beginners: Learn Git in 1 Hour (2026)](https://thetips4you.in/courses/git-beginner-course/): A complete beginner path through Git basics so you can track changes, work with branches and collaborate with confidence.
+- [Docker Tutorial for Beginners — Full Course](https://thetips4you.in/courses/docker-full-course/): Start with Docker fundamentals and work through a complete beginner course on images, containers and day-to-day container workflows.
+- [Kubernetes Tutorial — From Zero to Deployed](https://thetips4you.in/courses/kubernetes-crash-course/): Start with Kubernetes basics and follow a practical path from your first cluster to a deployed application.
+- [GitHub Actions Tutorial — CI/CD from Scratch](https://thetips4you.in/courses/github-actions-cicd/): Build a GitHub Actions CI/CD pipeline that automatically builds, tests and deploys when code changes.
+- [Jenkins Tutorial for Beginners — Full Course](https://thetips4you.in/courses/jenkins-full-course/): Learn the Jenkins basics, set up your first jobs and explore the automation behind a working CI/CD pipeline.
+- [GitLab CI/CD Full Course — Zero to Hero](https://thetips4you.in/courses/gitlab-cicd-zero-to-hero/): A long-form GitLab CI/CD walkthrough that takes you from pipeline basics toward building and running automated delivery workflows.
+- [AWS Tutorial for Beginners 2026 — EC2, S3, Lambda & More](https://thetips4you.in/courses/aws-beginner-course/): Start with EC2, S3 and Lambda in the 2026 beginner video, then continue through the channel's six-lesson AWS course.
+- [Ansible Tutorial for Beginners — 14-Lesson Series](https://thetips4you.in/courses/ansible-course-series/): Follow the channel's Ansible course from setup and inventory through playbooks, variables, roles and more.
+- [Helm Tutorial for Beginners 2026 — Full Kubernetes Course](https://thetips4you.in/courses/helm-kubernetes-course/): Move from Helm basics toward installing, upgrading and rolling back Kubernetes applications with charts.
+- [Prometheus Crash Course 2026 — Complete Guide](https://thetips4you.in/courses/prometheus-crash-course/): Learn Prometheus monitoring from setup through PromQL queries, alerting and Grafana dashboards.
+- [Datadog Tutorial for Beginners — Full Course 2026](https://thetips4you.in/courses/datadog-full-course/): Set up Datadog monitoring from scratch and learn how dashboards and alerts help you understand production systems.
 
-## Official channel
-- https://www.youtube.com/@Thetips4you
+## AI coding guides
+- [Claude Code for FREE Forever — OpenRouter Setup (2026)](https://thetips4you.in/ai-coding/claude-code-openrouter/): A practical walkthrough of connecting Claude Code to OpenRouter and trying free-tier model options for coding tasks.
+- [OpenCode: Free AI Coding Agent Setup Guide 2026](https://thetips4you.in/ai-coding/opencode-free-agent/): Get started with OpenCode, an open-source AI coding agent, and explore no-subscription model options.
+- [Codex vs Claude Code vs Cursor: Cost & Models](https://thetips4you.in/ai-coding/codex-claude-cursor/): A beginner-friendly comparison of AI coding workflows, model choices, and cost considerations.
+- [AI Skills vs Tools vs MCP: What’s the Difference in 5 mins?](https://thetips4you.in/ai-coding/skills-tools-mcp/): Understand how reusable instructions, tool actions, and MCP connections fit together in an AI agent stack.
+
+## Other resources
+- [YouTube channel](https://www.youtube.com/@Thetips4you): Original videos and playlists.
+- [XML sitemap](https://thetips4you.in/sitemap.xml): Canonical page URLs and video sitemap entries.

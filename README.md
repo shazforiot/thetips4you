@@ -42,7 +42,7 @@ The course generator writes /courses/, twelve course pages, including the Ansibl
 
 - /sitemap.xml lists the homepage, course and AI guide pages, and fifteen video watch pages with video sitemap metadata; the Ansible playlist page is listed without a video entry.
 - /robots.txt points crawlers to the sitemap.
-- /llms.txt is a supplementary plain-text guide for agents that choose to use it.
+- /llms.txt is a supplementary Markdown index for agents that choose to use it. HTML pages link to it with rel=describedby.
 - Static HTML links and page descriptions remain visible without JavaScript.
 
 These files help crawlers find the content, but search engines decide when and whether to index it. After deployment, verify the domain in Google Search Console and submit https://thetips4you.in/sitemap.xml.
