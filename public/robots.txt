@@ -1,3 +1,5 @@
 User-agent: *
+Allow: /llms.txt
+Allow: /agents.txt
 Allow: /
 Sitemap: https://thetips4you.in/sitemap.xml

@@ -1,0 +1,7 @@
+# agents.txt
+# Draft format: https://agents-txt.com/
+# Thetips4you is a public, read-only tutorial site.
+# No agent API, authentication, payments, MCP, or other action endpoints are declared.
+# Content guide: https://thetips4you.in/llms.txt
+# Sitemap: https://thetips4you.in/sitemap.xml
+# Original videos: https://www.youtube.com/@Thetips4you

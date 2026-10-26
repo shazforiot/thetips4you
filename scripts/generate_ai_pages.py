@@ -36,6 +36,6 @@ for x in v:
     (folder/'index.html').write_text(head(x['title']+' | Thetips4you',x['summary'],canonical,image='https://i.ytimg.com/vi/'+x['id']+'/hqdefault.jpg',schema=[video,crumbs(x)])+page+foot(),encoding='utf-8')
 urls=[D+'/',D+'/ai-coding/']+[D+link(x) for x in v if x['watch']]
 (p/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('  <url><loc>'+e(u)+'</loc></url>\n' for u in urls)+'</urlset>\n',encoding='utf-8')
-(p/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+D+'/sitemap.xml\n',encoding='utf-8')
+(p/'robots.txt').write_text('User-agent: *\nAllow: /llms.txt\nAllow: /agents.txt\nAllow: /\nSitemap: '+D+'/sitemap.xml\n',encoding='utf-8')
 generate_llms()
 print('Generated',len(urls),'sitemap URLs and',sum(x['watch'] for x in v),'watch pages')
