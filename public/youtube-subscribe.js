@@ -39,7 +39,7 @@
     rememberFor30Days();
   };
 
-  let remaining = 10000;
+  let remaining = 15000;
   let startedAt = 0;
   let timer;
   const schedule = () => {
