@@ -6,6 +6,11 @@
   const rememberFor30Days = () => {
     try { localStorage.setItem(storageKey, String(Date.now() + 30 * 24 * 60 * 60 * 1000)); } catch {}
   };
+  const track = (eventName, params = {}) => {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", eventName, { prompt_name: "youtube_subscribe", ...params });
+    }
+  };
   if (Date.now() < readNextShowAfter()) return;
 
   const card = document.createElement("aside");
@@ -23,18 +28,22 @@
     <div class="yt-subscribe-bottom"><small>Free tutorials from Thetips4you</small><button class="yt-subscribe-later" type="button">Not now</button></div>`;
   document.body.appendChild(card);
 
-  const suppress = () => {
+  const dismiss = (method) => {
+    track("subscribe_prompt_dismiss", { dismiss_method: method });
     rememberFor30Days();
     card.hidden = true;
   };
-  card.querySelector(".yt-subscribe-close").addEventListener("click", suppress);
-  card.querySelector(".yt-subscribe-later").addEventListener("click", suppress);
-  card.querySelector(".yt-subscribe-action").addEventListener("click", suppress);
-
-
+  card.querySelector(".yt-subscribe-close").addEventListener("click", () => dismiss("close_button"));
+  card.querySelector(".yt-subscribe-later").addEventListener("click", () => dismiss("not_now"));
+  card.querySelector(".yt-subscribe-action").addEventListener("click", () => {
+    track("subscribe_prompt_click");
+    rememberFor30Days();
+    card.hidden = true;
+  });
   const show = () => {
     if (Date.now() < readNextShowAfter()) return;
     card.hidden = false;
+    track("subscribe_prompt_view");
     // Count an impression even when the visitor ignores the card.
     rememberFor30Days();
   };

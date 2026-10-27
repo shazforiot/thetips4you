@@ -47,3 +47,15 @@ The course generator writes /courses/, twelve course pages, including the Ansibl
 - Static HTML links and page descriptions remain visible without JavaScript.
 
 These files help crawlers find the content, but search engines decide when and whether to index it. After deployment, verify the domain in Google Search Console and submit https://thetips4you.in/sitemap.xml.
+
+## YouTube prompt analytics
+
+The popup appears after 15 seconds and stores a 30-day suppression timestamp in the visitor's browser. When GA4 is configured, it sends these events:
+
+- subscribe_prompt_view when the card becomes visible.
+- subscribe_prompt_click when the YouTube button is clicked.
+- subscribe_prompt_dismiss when the visitor chooses the close button or Not now. The dismiss_method parameter distinguishes those choices.
+
+To activate GA4, create a Web data stream for https://thetips4you.in/ and copy its G- Measurement ID. In this repository, open Settings > Secrets and variables > Actions > Variables and add GA4_MEASUREMENT_ID with that value. Then run the Pages workflow again (or push a commit). The build includes the Google tag on all pages only when this variable is set. The tag loads immediately; there is no analytics consent banner.
+
+Check the events in GA4 Realtime after triggering them, then in Reports > Engagement > Events. The click event counts button clicks; it cannot prove that a visitor reached YouTube or subscribed.
