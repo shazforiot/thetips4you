@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../dist/", import.meta.url));
-const measurementId = process.env.GA4_MEASUREMENT_ID?.trim();
+const measurementId = process.env.GA4_MEASUREMENT_ID?.trim() || "G-S2RTHL85JF";
 if (measurementId && !/^G-[A-Z0-9]+$/.test(measurementId)) {
   throw new Error("GA4_MEASUREMENT_ID must start with G- and contain only letters and numbers");
 }
