@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/inject_youtube_subscribe.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,0 +1,23 @@
+.yt-subscribe-card{position:fixed;right:24px;bottom:24px;z-index:1000;width:min(350px,calc(100vw - 32px));padding:22px;border:1px solid #65785a;border-radius:12px;background:linear-gradient(145deg,#293625 0%,#1b231a 72%);box-shadow:0 26px 80px #000b;color:#f3f2e9;font-family:"DM Sans",Arial,sans-serif;isolation:isolate;overflow:hidden}
+.yt-subscribe-card[hidden]{display:none}
+.yt-subscribe-card::before{content:"";position:absolute;right:-54px;top:-74px;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle,#ff784931,transparent 68%);z-index:-1}
+.yt-subscribe-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.yt-subscribe-badge{display:flex;align-items:center;gap:9px;color:#ff946e;font:700 10px/1.3 ui-monospace,Consolas,monospace;letter-spacing:1.55px;text-transform:uppercase}
+.yt-subscribe-mark{display:grid;place-items:center;width:31px;height:25px;border-radius:7px;background:#ff7849;color:#161913}
+.yt-subscribe-mark svg{width:13px;height:13px;fill:currentColor}
+.yt-subscribe-close{display:grid;place-items:center;flex:none;width:30px;height:30px;padding:0;border:1px solid #52634e;border-radius:50%;background:transparent;color:#d0d8c8;cursor:pointer}
+.yt-subscribe-close:hover,.yt-subscribe-close:focus-visible{background:#3d5037;color:#fff}
+.yt-subscribe-close svg{width:15px;height:15px;stroke:currentColor}
+.yt-subscribe-card h2{font-family:"Manrope",Arial,sans-serif;font-size:clamp(23px,2.3vw,27px);font-weight:700;line-height:1.16;letter-spacing:-.045em;margin:18px 0 9px}
+.yt-subscribe-card p{font-size:13px;line-height:1.6;color:#c2cdb9;margin:0}
+.yt-subscribe-action{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;margin-top:20px;padding:13px 15px;border-radius:6px;background:#ff7849;color:#151911!important;font-size:14px;font-weight:800;text-decoration:none!important;transition:background .2s,transform .2s}
+.yt-subscribe-action:hover{background:#ff956e;transform:translateY(-2px)}
+.yt-subscribe-action svg{width:18px;height:18px;fill:currentColor}
+.yt-subscribe-action span{display:flex;align-items:center;gap:10px}
+.yt-subscribe-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
+.yt-subscribe-bottom small{font-size:11px;color:#95a38e}
+.yt-subscribe-later{padding:4px 0;border:0;background:transparent;color:#d7e0d0;font-size:12px;font-weight:700;cursor:pointer}
+.yt-subscribe-later:hover{text-decoration:underline;color:#ff946e}
+.yt-subscribe-card :focus-visible{outline:2px solid #ff946e;outline-offset:3px}
+@media(max-width:620px){.yt-subscribe-card{left:12px;right:12px;bottom:12px;width:auto;padding:20px}.yt-subscribe-card h2{font-size:24px;margin-top:14px}.yt-subscribe-action{margin-top:19px}.yt-subscribe-bottom{margin-top:13px}}
+@media(prefers-reduced-motion:reduce){.yt-subscribe-action{transition:none}.yt-subscribe-action:hover{transform:none}}
