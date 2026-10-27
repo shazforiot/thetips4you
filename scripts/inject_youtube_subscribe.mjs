@@ -12,13 +12,14 @@ const ga4Tags = measurementId
     '<script>window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};window.gtag("js",new Date());window.gtag("config","' + measurementId + '");</script>'
   : "";
 const promptTags = '<link rel="stylesheet" href="/youtube-subscribe.css"><script defer src="/youtube-subscribe.js"></script>';
+const pwaTags = '<link rel="manifest" href="/manifest.webmanifest"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Thetips4you"><link rel="stylesheet" href="/pwa-install.css"><script defer src="/pwa-install.js"></script>';
 
 async function inject(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const path = join(directory, entry.name);
     if (entry.isDirectory()) {
       await inject(path);
-    } else if (entry.isFile() && entry.name.endsWith(".html")) {
+    } else if (entry.isFile() && entry.name.endsWith(".html") && entry.name !== "offline.html") {
       let html = await readFile(path, "utf8");
       if (!html.includes("<head>") || !html.includes("</head>")) {
         throw new Error("Missing head element in " + path);
@@ -28,6 +29,9 @@ async function inject(directory) {
       }
       if (!html.includes("/youtube-subscribe.js")) {
         html = html.replace("</head>", promptTags + "</head>");
+      }
+      if (!html.includes('href="/manifest.webmanifest"')) {
+        html = html.replace("</head>", pwaTags + "</head>");
       }
       await writeFile(path, html);
     }
